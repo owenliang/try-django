@@ -1,0 +1,31 @@
+{% include 'user/header.html' %}
+<body>
+    <form action="{% url 'user:create' %}" method="get">
+        <input name="name" type="text">
+        <input name="passwd" type="password">
+        <input name="nickname" type="nickname">
+        <input type="submit" value="保存">
+    </form>
+    <table>
+        <tr>
+            <td>帐号</td>
+            <td>密码</td>
+            <td>昵称</td>
+            <td>创建日期</td>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.passwd }}</td>
+            <td>{{ user.nickname }}</td>
+            <td>{{ user.create_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if pagination.prev %}
+        <a href="{% url 'user:index' %}?page={{pagination.prev}}">上一页</a>
+    {% endif %}
+   {% if pagination.next %}
+        <a href="{% url 'user:index' %}?page={{pagination.next}}">下一页</a>
+    {% endif %}
+{% include 'user/footer.html' %}

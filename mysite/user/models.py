@@ -4,5 +4,5 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length = 32)
     passwd = models.CharField(max_length = 32)
-    nickname = models.CharField(max_length=64, default = 'visitor')
+    nickname = models.CharField(max_length=64)
     create_date = models.DateTimeField()
