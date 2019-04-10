@@ -23,7 +23,7 @@ django-admin startproject mysite
 在什么目录执行都可以, django会根据manage.py文件所在目录相对创建user子目录
 
 ```
-python3 manage.py user
+python3 manage.py startapp user
 ```
 
 ## 实现接口
